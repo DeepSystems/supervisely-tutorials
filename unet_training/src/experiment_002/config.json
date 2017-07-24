@@ -1,0 +1,269 @@
+[
+  {
+    "action": "data",
+    "src": ["Cityscapes/*"],
+    "dst": "$data",
+    "settings": {
+      "classes_mapping": {
+        "bicycle": "bg",
+        "bicyclegroup": "bg",
+        "bridge": "bg",
+        "building": "bg",
+        "bus": "vehicle",
+        "car": "vehicle",
+        "caravan": "vehicle",
+        "cargroup": "neutral",
+        "dynamic": "bg",
+        "ego vehicle": "neutral",
+        "fence": "neutral",
+        "ground": "bg",
+        "guard rail": "bg",
+        "license plate": "neutral",
+        "motorcycle": "bg",
+        "motorcyclegroup": "bg",
+        "out of roi": "neutral",
+        "parking": "neutral",
+        "person": "person",
+        "persongroup": "neutral",
+        "pole": "neutral",
+        "polegroup": "neutral",
+        "rail track": "neutral",
+        "rectification border": "neutral",
+        "rider": "person",
+        "ridergroup": "neutral",
+        "road": "road",
+        "sidewalk": "bg",
+        "sky": "bg",
+        "static": "neutral",
+        "terrain": "bg",
+        "traffic light": "bg",
+        "traffic sign": "bg",
+        "trailer": "vehicle",
+        "train": "vehicle",
+        "truck": "vehicle",
+        "truckgroup": "neutral",
+        "tunnel": "bg",
+        "unlabeled": "neutral",
+        "vegetation": "bg",
+        "wall": "bg"
+      }
+    }
+  },
+
+  {
+    "action": "if",
+    "src": ["$data"],
+    "dst": ["null", "$data_filtered"],
+    "settings": {
+      "condition": {
+        "regex_names": [
+          "aachen_000013_000019",
+          "aachen_000019_000019",
+          "aachen_000020_000019",
+          "aachen_000022_000019",
+          "aachen_000024_000019",
+          "aachen_000090_000019",
+          "aachen_000104_000019",
+          "aachen_000161_000019",
+          "aachen_000162_000019",
+          "bochum_000000_015038",
+          "bremen_000073_000019",
+          "bremen_000080_000019",
+          "bremen_000147_000019",
+          "cologne_000050_000019",
+          "cologne_000051_000019",
+          "cologne_000145_000019",
+          "darmstadt_000067_000019",
+          "darmstadt_000068_000019",
+          "darmstadt_000070_000019",
+          "darmstadt_000071_000019",
+          "darmstadt_000073_000019",
+          "darmstadt_000083_000019",
+          "dusseldorf_000041_000019",
+          "erfurt_000068_000019",
+          "hamburg_000000_029144",
+          "hamburg_000000_048494",
+          "hamburg_000000_073999",
+          "hamburg_000000_074139",
+          "hamburg_000000_074267",
+          "hamburg_000000_074425",
+          "hamburg_000000_074545",
+          "hamburg_000000_089491",
+          "hamburg_000000_104857",
+          "hamburg_000000_105123",
+          "hanover_000000_019938",
+          "hanover_000000_020089",
+          "hanover_000000_020655",
+          "hanover_000000_035768",
+          "jena_000007_000019",
+          "jena_000008_000019",
+          "jena_000044_000019",
+          "jena_000046_000019",
+          "jena_000060_000019",
+          "jena_000082_000019",
+          "jena_000083_000019",
+          "jena_000084_000019",
+          "jena_000085_000019",
+          "jena_000086_000019",
+          "jena_000087_000019",
+          "jena_000088_000019",
+          "krefeld_000000_000108",
+          "krefeld_000000_000926",
+          "krefeld_000000_015494",
+          "krefeld_000000_016342",
+          "monchengladbach_000000_011383",
+          "monchengladbach_000000_031360",
+          "monchengladbach_000000_034302",
+          "monchengladbach_000001_001531",
+          "strasbourg_000000_013944",
+          "strasbourg_000000_014503",
+          "strasbourg_000000_014584",
+          "strasbourg_000000_019229",
+          "strasbourg_000000_019355",
+          "strasbourg_000000_019617",
+          "strasbourg_000001_001901",
+          "strasbourg_000001_002081",
+          "strasbourg_000001_002216",
+          "strasbourg_000001_002354",
+          "strasbourg_000001_002519",
+          "strasbourg_000001_002644",
+          "strasbourg_000001_002949",
+          "strasbourg_000001_018742",
+          "strasbourg_000001_026856",
+          "strasbourg_000001_029178",
+          "strasbourg_000001_029696",
+          "stuttgart_000014_000019",
+          "tubingen_000062_000019",
+          "tubingen_000063_000019",
+          "tubingen_000079_000019",
+          "tubingen_000080_000019",
+          "ulm_000013_000019",
+          "ulm_000014_000019",
+          "ulm_000015_000019",
+          "ulm_000016_000019",
+          "ulm_000017_000019",
+          "ulm_000019_000019",
+          "ulm_000067_000019",
+          "weimar_000093_000019",
+          "weimar_000094_000019",
+          "zurich_000090_000019",
+          "lindau_000017_000019",
+          "lindau_000018_000019",
+          "lindau_000019_000019",
+          "lindau_000034_000019",
+          "lindau_000035_000019",
+          "lindau_000040_000019",
+          "lindau_000044_000019",
+          "lindau_000045_000019",
+          "lindau_000046_000019",
+          "lindau_000047_000019",
+          "lindau_000048_000019",
+          "lindau_000049_000019",
+          "lindau_000050_000019",
+          "lindau_000051_000019",
+          "lindau_000052_000019",
+          "lindau_000053_000019",
+          "munster_000059_000019",
+          "munster_000133_000019",
+          "munster_000148_000019"
+        ]
+      }
+    }
+  },
+
+  {
+    "action": "resize",
+    "src": ["$data_filtered"],
+    "dst": "$data_resized",
+    "settings": {
+      "width": 224,
+      "height": 224,
+      "aspect_ratio": {
+        "keep": false
+      }
+    }
+  },
+
+  {
+    "action": "if",
+    "src": ["$data_resized"],
+    "dst": ["$val", "$train"],
+    "settings": {
+      "condition": {
+        "project_datasets": ["Cityscapes/frankfurt", "Cityscapes/lindau", "Cityscapes/munster"]
+      }
+    }
+  },
+
+  {
+    "action": "tag",
+    "src": ["$train"],
+    "dst": "$train_tagged",
+    "settings": {
+      "tag": "train"
+    }
+  },
+
+  {
+    "action": "tag",
+    "src": ["$val"],
+    "dst": "$val_tagged",
+    "settings": {
+      "tag": "val"
+    }
+  },
+
+  {
+    "action": "objects_filter",
+    "src": ["$train_tagged", "$val_tagged"],
+    "dst": "$small_filtered",
+    "settings": {
+      "filter_by": {
+        "polygon_sizes": {
+          "filtering_classes": ["vehicle", "road"],
+          "area_percent": 0.15,
+          "action": {"remap_class": "neutral"},
+          "comparator": "less"
+        }
+      }
+    }
+  },
+
+  {
+    "action": "background",
+    "src": ["$small_filtered"],
+    "dst": "$bg",
+    "settings": {
+      "class": "neutral"
+    }
+  },
+
+  {
+    "action": "segmentation",
+    "src": ["$bg"],
+    "dst": "cityscales_4cl",
+    "settings": {
+      "gt_machine_color": {
+        "bg": [0, 0, 0],
+        "road": [1, 1, 1],
+        "vehicle": [2, 2, 2],
+        "person": [3, 3, 3],
+        "neutral": [4, 4, 4]
+      },
+      "gt_human_color": {
+        "bg": [0, 0, 0],
+        "road": [0, 184, 217],
+        "vehicle": [0, 255, 0],
+        "person": [255, 0, 0],
+        "neutral": [255, 255, 255]
+      },
+      "tag2part": {
+        "train": "train",
+        "val": "val"
+      },
+      "txt_generation": {
+        "prefix": "/data"
+      }
+    }
+  }
+]
