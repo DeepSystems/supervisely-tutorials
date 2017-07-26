@@ -1,0 +1,49 @@
+[
+  {
+    "action": "data",
+    "src": ["Anpr tutorial/artificial"],
+    "dst": "$sample0",
+    "settings": {
+      "classes_mapping":{
+        "Licence plate":"plate"
+      }
+    }
+  },
+  {
+    "action": "bbox",
+    "src": ["$sample0"],
+    "dst": "$sample_bb",
+    "settings": {
+      "rasterize": false,
+      "classes": ["plate"]
+    }
+  },
+  {
+    "action": "if",
+    "src": ["$sample_bb"],
+    "dst": ["$sample_train", "$sample_test"],
+    "settings": {
+      "condition": {
+        "probability": 0.98
+      }
+    }
+  },
+  {
+    "action": "save",
+    "src": ["$sample_train"],
+    "dst": "artificial_train",
+    "settings": {
+      "images": true,
+      "annotations": true
+    }
+  },
+  {
+    "action": "save",
+    "src": ["$sample_test"],
+    "dst": "artificial_test",
+    "settings": {
+      "images": true,
+      "annotations": true
+    }
+  }
+]
