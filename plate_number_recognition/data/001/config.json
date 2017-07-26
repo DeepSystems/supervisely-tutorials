@@ -1,7 +1,7 @@
 [
   {
     "action": "data",
-    "src": ["plates/*"],
+    "src": ["OCR licence plates/*"],
     "dst": "$sample0",
     "settings": {
       "classes_mapping": {}
