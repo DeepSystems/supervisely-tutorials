@@ -7,4 +7,3 @@ RUN pip2 install pillow
 RUN pip2 install pandas
 RUN pip2 install scikit-learn
 RUN pip2 install scikit-image
-

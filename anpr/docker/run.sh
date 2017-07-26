@@ -3,4 +3,4 @@ nvidia-docker run --rm -it \
 	-v `pwd`/../src:/src \
 	-v `pwd`/../data:/data \
 	-w /src \
-	supervisely_anpr jupyter notebook
+	supervisely_anpr bash
