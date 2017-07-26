@@ -5,37 +5,27 @@
     "dst": "$sample0",
     "settings": {
       "classes_mapping":{
-        "licence plate":"plate",
-        "plate":"plate"
+        "Licence plate":"plate"
       }
     }
   },
   {
-    "action": "if",
+    "action": "bbox",
     "src": ["$sample0"],
+    "dst": "$sample_bb",
+    "settings": {
+      "rasterize": false,
+      "classes": ["plate"]
+    }
+  },
+  {
+    "action": "if",
+    "src": ["$sample_bb"],
     "dst": ["$sample_train", "$sample_test"],
     "settings": {
       "condition": {
         "probability": 0.98
       }
-    }
-  },
-  {
-    "action": "bbox",
-    "src": ["$sample_train"],
-    "dst": "$sample_train_bb",
-    "settings": {
-      "rasterize": false,
-      "classes": ["plate"]
-    }
-  },
-  {
-    "action": "bbox",
-    "src": ["$sample_test"],
-    "dst": "$sample_test_bb",
-    "settings": {
-      "rasterize": false,
-      "classes": ["plate"]
     }
   },
   {
