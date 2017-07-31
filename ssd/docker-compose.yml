@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  ssd:
+    # build: ./docker
+    image: deepsystems/caffe-ssd
+    command: 'jupyter notebook --ip=* --no-browser --allow-root'
+    ports:
+      - "8888:8888"
+    volumes:
+      - ../scripts/ssd_pascal.py:/opt/caffe/examples/ssd/ssd_pascal.py
+      # - ./scripts:/opt/caffe/scripts
+      - ./data:/root/data/VOCdevkit
+      - ./models:/opt/caffe/models/VGGNet/VOC0712
+
