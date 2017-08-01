@@ -8,8 +8,5 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ../scripts/ssd_pascal.py:/opt/caffe/examples/ssd/ssd_pascal.py
-      # - ./scripts:/opt/caffe/scripts
+      - ./caffe:/opt/caffe
       - ./data:/root/data/VOCdevkit
-      - ./models:/opt/caffe/models/VGGNet/VOC0712
-

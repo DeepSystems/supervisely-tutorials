@@ -1,0 +1,420 @@
+[
+  {
+    "action": "data",
+    "src": [
+      "Cityscapes/*"
+    ],
+    "dst": "$cityscapes_000",
+    "settings": {
+      "classes_mapping": {
+        "bicycle": "motorbike",
+        "bicyclegroup": "__ignore__",
+        "bridge": "__ignore__",
+        "building": "__ignore__",
+        "bus": "vehicle",
+        "car": "vehicle",
+        "caravan": "vehicle",
+        "cargroup": "__ignore__",
+        "dynamic": "__ignore__",
+        "ego vehicle": "__ignore__",
+        "fence": "__ignore__",
+        "ground": "__ignore__",
+        "guard rail": "__ignore__",
+        "license plate": "__ignore__",
+        "motorcycle": "motorbike",
+        "motorcyclegroup": "__ignore__",
+        "out of roi": "__ignore__",
+        "parking": "__ignore__",
+        "person": "person",
+        "persongroup": "__ignore__",
+        "pole": "__ignore__",
+        "polegroup": "__ignore__",
+        "rail track": "__ignore__",
+        "rectification border": "__ignore__",
+        "rider": "person",
+        "ridergroup": "__ignore__",
+        "road": "__ignore__",
+        "sidewalk": "__ignore__",
+        "sky": "__ignore__",
+        "static": "__ignore__",
+        "terrain": "__ignore__",
+        "traffic light": "__ignore__",
+        "traffic sign": "__ignore__",
+        "trailer": "vehicle",
+        "train": "vehicle",
+        "truck": "vehicle",
+        "truckgroup": "__ignore__",
+        "tunnel": "__ignore__",
+        "unlabeled": "__ignore__",
+        "vegetation": "__ignore__",
+        "wall": "__ignore__"
+      }
+    }
+  },
+  {
+    "action": "if",
+    "src": [
+      "$cityscapes_000"
+    ],
+    "dst": [
+      "null",
+      "$cityscapes_001"
+    ],
+    "settings": {
+      "condition": {
+        "regex_names": [
+          "aachen_000013_000019",
+          "aachen_000019_000019",
+          "aachen_000020_000019",
+          "aachen_000022_000019",
+          "aachen_000024_000019",
+          "aachen_000090_000019",
+          "aachen_000104_000019",
+          "aachen_000161_000019",
+          "aachen_000162_000019",
+          "bochum_000000_015038",
+          "bremen_000073_000019",
+          "bremen_000080_000019",
+          "bremen_000147_000019",
+          "cologne_000050_000019",
+          "cologne_000051_000019",
+          "cologne_000145_000019",
+          "darmstadt_000067_000019",
+          "darmstadt_000068_000019",
+          "darmstadt_000070_000019",
+          "darmstadt_000071_000019",
+          "darmstadt_000073_000019",
+          "darmstadt_000083_000019",
+          "dusseldorf_000041_000019",
+          "erfurt_000068_000019",
+          "hamburg_000000_029144",
+          "hamburg_000000_048494",
+          "hamburg_000000_073999",
+          "hamburg_000000_074139",
+          "hamburg_000000_074267",
+          "hamburg_000000_074425",
+          "hamburg_000000_074545",
+          "hamburg_000000_089491",
+          "hamburg_000000_104857",
+          "hamburg_000000_105123",
+          "hanover_000000_019938",
+          "hanover_000000_020089",
+          "hanover_000000_020655",
+          "hanover_000000_035768",
+          "jena_000007_000019",
+          "jena_000008_000019",
+          "jena_000044_000019",
+          "jena_000046_000019",
+          "jena_000060_000019",
+          "jena_000082_000019",
+          "jena_000083_000019",
+          "jena_000084_000019",
+          "jena_000085_000019",
+          "jena_000086_000019",
+          "jena_000087_000019",
+          "jena_000088_000019",
+          "krefeld_000000_000108",
+          "krefeld_000000_000926",
+          "krefeld_000000_015494",
+          "krefeld_000000_016342",
+          "monchengladbach_000000_011383",
+          "monchengladbach_000000_031360",
+          "monchengladbach_000000_034302",
+          "monchengladbach_000001_001531",
+          "strasbourg_000000_013944",
+          "strasbourg_000000_014503",
+          "strasbourg_000000_014584",
+          "strasbourg_000000_019229",
+          "strasbourg_000000_019355",
+          "strasbourg_000000_019617",
+          "strasbourg_000001_001901",
+          "strasbourg_000001_002081",
+          "strasbourg_000001_002216",
+          "strasbourg_000001_002354",
+          "strasbourg_000001_002519",
+          "strasbourg_000001_002644",
+          "strasbourg_000001_002949",
+          "strasbourg_000001_018742",
+          "strasbourg_000001_026856",
+          "strasbourg_000001_029178",
+          "strasbourg_000001_029696",
+          "stuttgart_000014_000019",
+          "tubingen_000062_000019",
+          "tubingen_000063_000019",
+          "tubingen_000079_000019",
+          "tubingen_000080_000019",
+          "ulm_000013_000019",
+          "ulm_000014_000019",
+          "ulm_000015_000019",
+          "ulm_000016_000019",
+          "ulm_000017_000019",
+          "ulm_000019_000019",
+          "ulm_000067_000019",
+          "weimar_000093_000019",
+          "weimar_000094_000019",
+          "zurich_000090_000019",
+          "lindau_000017_000019",
+          "lindau_000018_000019",
+          "lindau_000019_000019",
+          "lindau_000034_000019",
+          "lindau_000035_000019",
+          "lindau_000040_000019",
+          "lindau_000044_000019",
+          "lindau_000045_000019",
+          "lindau_000046_000019",
+          "lindau_000047_000019",
+          "lindau_000048_000019",
+          "lindau_000049_000019",
+          "lindau_000050_000019",
+          "lindau_000051_000019",
+          "lindau_000052_000019",
+          "lindau_000053_000019",
+          "munster_000059_000019",
+          "munster_000133_000019",
+          "munster_000148_000019"
+        ]
+      }
+    }
+  },
+  {
+    "dst": "$mapillary_000",
+    "src": [
+      "Mapillary/*"
+    ],
+    "action": "data",
+    "settings": {
+      "classes_mapping": {
+        "Bus": "vehicle",
+        "Car": "vehicle",
+        "Sky": "__ignore__",
+        "Bird": "__ignore__",
+        "Boat": "__ignore__",
+        "Curb": "__ignore__",
+        "Pole": "__ignore__",
+        "Road": "__ignore__",
+        "Sand": "__ignore__",
+        "Snow": "__ignore__",
+        "Wall": "__ignore__",
+        "Bench": "__ignore__",
+        "Fence": "__ignore__",
+        "Truck": "vehicle",
+        "Water": "__ignore__",
+        "Banner": "__ignore__",
+        "Bridge": "__ignore__",
+        "Person": "person",
+        "Tunnel": "__ignore__",
+        "Barrier": "__ignore__",
+        "Bicycle": "motorbike",
+        "Caravan": "vehicle",
+        "Mailbox": "__ignore__",
+        "Manhole": "__ignore__",
+        "Parking": "__ignore__",
+        "Pothole": "__ignore__",
+        "Terrain": "__ignore__",
+        "Trailer": "vehicle",
+        "Building": "__ignore__",
+        "Curb Cut": "__ignore__",
+        "Mountain": "__ignore__",
+        "On Rails": "vehicle",
+        "Sidewalk": "__ignore__",
+        "Bicyclist": "person",
+        "Bike Lane": "__ignore__",
+        "Bike Rack": "__ignore__",
+        "Billboard": "__ignore__",
+        "Car Mount": "__ignore__",
+        "Trash Can": "vehicle",
+        "Unlabeled": "__ignore__",
+        "Guard Rail": "__ignore__",
+        "Motorcycle": "motorbike",
+        "Rail Track": "__ignore__",
+        "Vegetation": "__ignore__",
+        "CCTV Camera": "__ignore__",
+        "Catch Basin": "__ignore__",
+        "Ego Vehicle": "__ignore__",
+        "Other Rider": "person",
+        "Phone Booth": "__ignore__",
+        "Fire Hydrant": "__ignore__",
+        "Junction Box": "__ignore__",
+        "Motorcyclist": "person",
+        "Service Lane": "__ignore__",
+        "Street Light": "__ignore__",
+        "Utility Pole": "__ignore__",
+        "Wheeled Slow": "__ignore__",
+        "Ground Animal": "__ignore__",
+        "Other Vehicle": "vehicle",
+        "Traffic Light": "__ignore__",
+        "Pedestrian Area": "__ignore__",
+        "Crosswalk - Plain": "__ignore__",
+        "Traffic Sign Frame": "__ignore__",
+        "Traffic Sign (Back)": "__ignore__",
+        "Traffic Sign (Front)": "__ignore__",
+        "Lane Marking - General": "__ignore__",
+        "Lane Marking - Crosswalk": "__ignore__"
+      }
+    }
+  },
+  {
+    "dst": [
+      "$merge",
+      "null"
+    ],
+    "src": [
+      "$cityscapes_001",
+      "$mapillary_000"
+    ],
+    "action": "if",
+    "settings": {
+      "condition": {
+        "include_classes": [
+          "person",
+          "motorbike",
+          "vehicle"
+        ]
+      }
+    }
+  },
+  {
+    "dst": "$merge_000",
+    "src": [
+      "$merge"
+    ],
+    "action": "resize",
+    "settings": {
+      "width": 480,
+      "height": 260,
+      "aspect_ratio": {
+        "keep": false
+      }
+    }
+  },
+  {
+    "dst": "$merge_001",
+    "src": [
+      "$merge_000"
+    ],
+    "action": "objects_filter",
+    "settings": {
+      "filter_by": {
+        "polygon_sizes": {
+          "action": "delete",
+          "comparator": "less",
+          "area_percent": 0.05,
+          "filtering_classes": [
+            "person",
+            "motorbike"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "dst": "$merge_002",
+    "src": [
+      "$merge_001"
+    ],
+    "action": "objects_filter",
+    "settings": {
+      "filter_by": {
+        "polygon_sizes": {
+          "action": "delete",
+          "comparator": "less",
+          "area_percent": 0.1,
+          "filtering_classes": [
+            "vehicle"
+          ]
+        }
+      }
+    }
+  },
+  {
+    "dst": "$merge_bbox",
+    "src": [
+      "$merge_002"
+    ],
+    "action": "bbox",
+    "settings": {
+      "classes": [
+        "person",
+        "motorbike",
+        "vehicle"
+      ],
+      "rasterize": false
+    }
+  },
+  {
+    "dst": [
+      "$merge_val",
+      "$merge_train"
+    ],
+    "src": [
+      "$merge_bbox"
+    ],
+    "action": "if",
+    "settings": {
+      "condition": {
+        "project_datasets": [
+          "Mapillary/validation",
+          "Cityscapes/frankfurt",
+          "Cityscapes/lindau",
+          "Cityscapes/munster"
+        ]
+      }
+    }
+  },
+  {
+    "dst": "$merge_train_tagged",
+    "src": [
+      "$merge_train"
+    ],
+    "action": "tag",
+    "settings": {
+      "tag": "train"
+    }
+  },
+  {
+    "dst": "$merge_val_tagged",
+    "src": [
+      "$merge_val"
+    ],
+    "action": "tag",
+    "settings": {
+      "tag": "val"
+    }
+  },
+  {
+    "dst": "clicker_export_test_ssd_citysc",
+    "src": [
+      "$merge_val_tagged",
+      "$merge_train_tagged"
+    ],
+    "action": "pascal_voc_detection",
+    "settings": {
+      "tag2part": {
+        "val": "test",
+        "train": "trainval"
+      },
+      "class2color": {
+        "person": [
+          255,
+          0,
+          0
+        ],
+        "vehicle": [
+          0,
+          0,
+          255
+        ],
+        "motorbike": [
+          0,
+          255,
+          0
+        ]
+      },
+      "class2number": {
+        "person": 1,
+        "vehicle": 3,
+        "motorbike": 2
+      }
+    }
+  }
+]
