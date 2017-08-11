@@ -3,10 +3,10 @@ Deep Learning tutorials that use latest architectures and models along with data
 
 Tutorials
 ---------
-- **[UNet](unet_training)** - Training road scene segmentation on Cityscapes with Tensorflow and UNet [(medium)](https://medium.com/p/1232314781a8)
+- **[UNet](unet_training)** - Training road scene segmentation on Cityscapes with Tensorflow and UNet (medium - coming soon)
 - **[SSD](ssd)** - Combining Cityscapes and Mappilary to train SSD using Supervise.ly (medium - coming soon)
 - **[plate_number_recognition](plate_number_recognition)** - Plane number recognition with Keras (medium - coming soon)
-- **[ANPR](anpr)** - Number plate detection with Supervisely and Tensorflow (medium - coming soon)
+- **[ANPR](anpr)** - Number plate detection with Supervisely and Tensorflow [(medium)](https://medium.com/p/e84c74d4382c)
 
 Prerequisites
 -------------
