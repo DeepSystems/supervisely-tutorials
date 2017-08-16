@@ -1,7 +1,7 @@
 [
   {
     "action": "data",
-    "src": ["Cityscapes_small/*"],
+    "src": ["cityscapes/*"],
     "dst": "$data",
     "settings": {
       "classes_mapping": {
@@ -190,7 +190,7 @@
     "dst": ["$train", "$val"],
     "settings": {
       "condition": {
-        "project_datasets": ["Cityscapes_small/aachen"]
+        "project_datasets": ["cityscapes/aachen"]
       }
     }
   },
