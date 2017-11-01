@@ -1,3 +1,4 @@
 train
 val
-data
+test
+*.zip
