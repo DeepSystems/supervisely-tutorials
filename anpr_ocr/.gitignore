@@ -1,2 +1,6 @@
 *.h5
 .ipynb_checkpoints/*
+data/train
+data/test
+data/val
+data/config.json
