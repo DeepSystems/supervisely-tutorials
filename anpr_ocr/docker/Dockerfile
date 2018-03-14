@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-devel
+FROM nvidia/cuda:8.0-cudnn6-devel
 
 ENV CONDA_DIR /opt/conda
 ENV PATH $CONDA_DIR/bin:$PATH
@@ -28,7 +28,7 @@ ARG python_version=3.5
 
 RUN conda install -y python=${python_version} && \
     pip install --upgrade pip && \
-    pip install tensorflow-gpu && \
+    pip install tensorflow-gpu==1.4.0 && \
     conda install Pillow scikit-learn notebook pandas matplotlib mkl nose pyyaml six h5py && \
     conda install theano pygpu && \
     git clone git://github.com/fchollet/keras.git /src && pip install -e /src[tests] && \
