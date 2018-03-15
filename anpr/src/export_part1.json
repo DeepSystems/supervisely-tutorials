@@ -1,85 +1,70 @@
 [
   {
-    "action": "data",
-    "src": [
-      "input/input"
-    ],
     "dst": "$sample01",
+    "src": [
+      "Anpr tutorial/artificial"
+    ],
+    "action": "data",
     "settings": {
       "classes_mapping": "default"
     }
   },
   {
-    "action": "resize",
+    "dst": "$sample_bb",
     "src": [
       "$sample01"
     ],
-    "dst": "$sample0",
-    "settings": {
-      "aspect_ratio": {
-        "keep": false
-      },
-      "width": 128,
-      "height": 64
-    }
-  },
-  {
     "action": "bbox",
-    "src": [
-      "$sample0"
-    ],
-    "dst": "$sample_bb",
     "settings": {
-      "rasterize": false,
-      "classes": [
-        "receipt"
-      ]
-    }
-  },
-  {
-    "action": "if",
-    "src": [
-      "$sample_bb"
-    ],
-    "dst": [
-      "$sample_train",
-      "$sample_test"
-    ],
-    "settings": {
-      "condition": {
-        "probability": 0.8
+      "classes_mapping": {
+        "plate": "plate_bbox"
       }
     }
   },
   {
-    "action": "tag",
+    "dst": [
+      "$sample_train",
+      "$sample_test"
+    ],
+    "src": [
+      "$sample_bb"
+    ],
+    "action": "if",
+    "settings": {
+      "condition": {
+        "probability": 0.98
+      }
+    }
+  },
+  {
+    "dst": "$train_tagged",
     "src": [
       "$sample_train"
     ],
-    "dst": "$train_tagged",
+    "action": "tag",
     "settings": {
       "tag": "train",
       "action": "add"
     }
   },
   {
-    "action": "tag",
+    "dst": "$test_tagged",
     "src": [
       "$sample_test"
     ],
-    "dst": "$test_tagged",
+    "action": "tag",
     "settings": {
       "tag": "test",
       "action": "add"
     }
   },
   {
-    "action": "save",
+    "dst": "artificial_samples",
     "src": [
       "$train_tagged",
       "$test_tagged"
     ],
-    "dst": "artificial_train",
+    "action": "save",
     "settings": {
       "images": true,
       "annotations": true
