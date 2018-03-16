@@ -1,31 +1,25 @@
 [
   {
     "action": "data",
-    "src": ["anpr_ocr/train"],
-    "dst": "$sample0",
+    "src": [
+      "anpr_ocr/train"
+    ],
+    "dst": "$trainval_samples",
     "settings": {
-      "classes_mapping": {}
+      "classes_mapping": "default"
     }
   },
   {
     "action": "if",
-    "src": ["$sample0"],
-    "dst": ["$train_val", "$test"],
-    "settings": {
-      "condition": {"probability": 0.8}
-    }
-  },
-  {
-    "action": "if",
-    "src": ["$train_val"],
-    "dst": ["$train", "$val"],
+    "src": ["$trainval_samples"],
+    "dst": ["$train_samples", "$val_samples"],
     "settings": {
       "condition": {"probability": 0.95}
     }
   },
   {
     "action": "tag",
-    "src": ["$train"],
+    "src": ["$train_samples"],
     "dst": "$train_tagged",
     "settings": {
       "tag": "train",
@@ -34,7 +28,7 @@
   },
   {
     "action": "tag",
-    "src": ["$val"],
+    "src": ["$val_samples"],
     "dst": "$val_tagged",
     "settings": {
       "tag": "val",
@@ -42,8 +36,18 @@
     }
   },
   {
+    "action": "data",
+    "src": [
+      "anpr_ocr/test"
+    ],
+    "dst": "$test_samples",
+    "settings": {
+      "classes_mapping": "default"
+    }
+  },
+  {
     "action": "tag",
-    "src": ["$test"],
+    "src": ["$test_samples"],
     "dst": "$test_tagged",
     "settings": {
       "tag": "test",
@@ -53,10 +57,10 @@
   {
     "action": "save",
     "src": ["$train_tagged", "$val_tagged", "$test_tagged"],
-    "dst": "samples",
+    "dst": "anpr_ocr",
     "settings": {
       "images": true,
       "annotations": true
     }
-  },
+  }
 ]
