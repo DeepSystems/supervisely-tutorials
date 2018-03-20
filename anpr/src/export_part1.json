@@ -6,7 +6,9 @@
     ],
     "action": "data",
     "settings": {
-      "classes_mapping": "default"
+      "classes_mapping": {
+	"Licence plate":"plate"      
+}
     }
   },
   {
