@@ -1,27 +1,38 @@
 [
   {
+    "dst": "$sample01",
+    "src": [
+      "Anpr tutorial/artificial"
+    ],
     "action": "data",
-    "src": ["Anpr tutorial/artificial"],
-    "dst": "$sample0",
     "settings": {
-      "classes_mapping":{
-        "Licence plate":"plate"
+      "classes_mapping": {
+        "Licence plate": "plate",
+        "Car": "__ignore__"
       }
     }
   },
   {
-    "action": "bbox",
-    "src": ["$sample0"],
     "dst": "$sample_bb",
+    "src": [
+      "$sample01"
+    ],
+    "action": "bbox",
     "settings": {
-      "rasterize": false,
-      "classes": ["plate"]
+      "classes_mapping": {
+        "plate": "plate_bbox"
+      }
     }
   },
   {
+    "dst": [
+      "$sample_train",
+      "$sample_test"
+    ],
+    "src": [
+      "$sample_bb"
+    ],
     "action": "if",
-    "src": ["$sample_bb"],
-    "dst": ["$sample_train", "$sample_test"],
     "settings": {
       "condition": {
         "probability": 0.98
@@ -29,18 +40,34 @@
     }
   },
   {
-    "action": "save",
-    "src": ["$sample_train"],
-    "dst": "artificial_train",
+    "dst": "$train_tagged",
+    "src": [
+      "$sample_train"
+    ],
+    "action": "tag",
     "settings": {
-      "images": true,
-      "annotations": true
+      "tag": "train",
+      "action": "add"
     }
   },
   {
+    "dst": "$test_tagged",
+    "src": [
+      "$sample_test"
+    ],
+    "action": "tag",
+    "settings": {
+      "tag": "test",
+      "action": "add"
+    }
+  },
+  {
+    "dst": "artificial_samples",
+    "src": [
+      "$train_tagged",
+      "$test_tagged"
+    ],
     "action": "save",
-    "src": ["$sample_test"],
-    "dst": "artificial_test",
     "settings": {
       "images": true,
       "annotations": true
